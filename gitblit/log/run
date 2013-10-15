@@ -1,0 +1,2 @@
+#!/bin/sh
+exec chpst -u gitblit svlogd -tt /opt/gitblit/logs
