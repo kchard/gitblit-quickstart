@@ -1,0 +1,4 @@
+#!/bin/sh -e
+cd /opt/gitblit
+exec 2>&1
+exec chpst -u gitblit java -jar gitblit.jar
