@@ -89,6 +89,18 @@ As of this writing the latest version is 1.3.2.</p>
 
 <p>Gitblit is provided as an executable jar with an embedded web server. There is no need to deploy the war in a servlet container such as Tomcat. </p>
 
+<p>By default Gitblit will only be available on the local server over SSL on port 8443. In order to access Gitblit from another server, we need to tell it to accept connections on interfaces besides localhost. If you would like to access Gitblit over a standard HTTP connection make the following changes in <code>/opt/gitblit/data/gitblit.properties</code>.</p>
+
+<pre><code>server.httpPort = 8080
+server.httpBindInterface =
+</code></pre>
+
+<p>If you would like to access Gitblit over HTTPS then make the following changes in <code>/opt/gitblit/data/gitblit.properties</code>.</p>
+
+<pre><code>server.httpsPort = 8443
+server.httpsBindInterface =
+</code></pre>
+
 <p>Start Gitblit by running the following command:</p>
 
 <pre><code># java -jar gitblit.jar
